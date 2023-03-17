@@ -1,0 +1,36 @@
+{
+  "name": "@zyxw/tmpl",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": [
+    "./dist/index.js",
+    "./dist/index.d.ts"
+  ],
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "bin.js"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup-node src/index.ts --target=node18 --format=esm --dts",
+    "build:watch": "npm run build -- --watch",
+    "test": "vitest",
+    "ts:watch": "tsc --watch --pretty --noEmit"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@zyxw/walker": "^0.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.3",
+    "vitest": "^0.28.4"
+  }
+}
